@@ -1,0 +1,26 @@
+<!--HACK: homes/aboutのviewと合わせて共通化できるマークアップ箇所をリファクタリングする-->
+<% if !user_signed_in? %>
+  <%= yield %>
+<% else %>
+  <% if controller.action_name.eql?("edit") then %>
+    <div class='container'>
+      <div class='row'>
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class='container px-5 px-sm-0'>
+      <div class='row'>
+        <div class='col-md-3'>
+          <!-- TODO: User info-->
+          <!-- TODO: New book -->
+        </div>
+        <div class='col-md-8 offset-md-1'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
