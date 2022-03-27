@@ -37,7 +37,7 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_url
   end
-  
+
   private
 
   def book_params

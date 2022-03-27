@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
   def show
     # WARNING: user詳細画面ではcurrent_userではなく対象のUser情報を@userに上書きしている
