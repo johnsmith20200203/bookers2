@@ -11,7 +11,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td></td>
+        <td><%= image_tag attachment_url(user, :image, :fill, 80, 80, fallback: "default-image_S.jpeg", format: "jpg") %></td>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user %></td>
       </tr>
