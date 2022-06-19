@@ -1,0 +1,3 @@
+# config/initializers/refile.rb
+
+Refile.secret_key = 'a3097a7dfa9e3565794edb0d4d81301c242847c73514dddf08b4d29a66fa98f63974be6f33bb25ae86ec4a768f03e6c4ae7a48f1248bdd09afb52a9c7a6452e6'

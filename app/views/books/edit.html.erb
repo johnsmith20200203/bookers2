@@ -1,0 +1,7 @@
+<h1>Editing Book</h1>
+
+<%= render "books/error" %>
+
+<%= render 'books/form', book: @book %>
+
+<%= link_to 'show', @book %> | <%= link_to 'back', books_path %>
