@@ -2,7 +2,13 @@
 
 <table class='table'>
   <tr>
-    <td></td>
+    <td>
+      <%= link_to user_path(current_user) do %>
+        <%= image_tag attachment_url(current_user, :profile_image, :fill, 80, 80, fallback: "default-image_S.jpeg", format: "jpg") %>
+        <br>
+        <%= current_user.name %>
+      <% end %>
+    </td>
     <td><%= link_to @book.title, @book %></td>
     <td><%= @book.body %></td>
 
