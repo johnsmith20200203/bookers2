@@ -3,10 +3,10 @@
 <table class='table'>
   <tr>
     <td>
-      <%= link_to user_path(current_user) do %>
-        <%= image_tag attachment_url(current_user, :profile_image, :fill, 80, 80, fallback: "default-image_S.jpeg", format: "jpg") %>
+      <%= link_to user_path(@book.user) do %>
+        <%= image_tag attachment_url(@book.user, :profile_image, :fill, 80, 80, fallback: "default-image_S.jpeg", format: "jpg") %>
         <br>
-        <%= current_user.name %>
+        <%= @book.user.name %>
       <% end %>
     </td>
     <td><%= link_to @book.title, @book %></td>
