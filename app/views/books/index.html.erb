@@ -12,9 +12,9 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td></td>
+        <td><%= link_to attachment_image_tag(book.user, :profile_image, :fill, 80, 80, fallback: "default-image_S.jpeg", format: "jpg"), user_path(book.user) %></td>
         <td><%= link_to book.title, book %></td>
-        <td><%= book.opinion %></td>
+        <td><%= book.body %></td>
       </tr>
     <% end %>
   </tbody>

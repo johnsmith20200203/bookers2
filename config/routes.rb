@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'homes#index'
-  get '/about', to: 'about#index', as: 'about'
+  get '/home/about', to: 'homes#about', as: 'about'
   resources :users, only: [:index, :show, :edit, :update]
   resources :books
 end

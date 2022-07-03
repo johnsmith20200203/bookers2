@@ -1,14 +1,22 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @books = Book.all
   end
 
   def show
     @book = Book.find(params[:id])
+    # WARNING: book投稿詳細画面ではcurrent_userではなくbookの投稿者情報で上書き
+    @user = @book.user
   end
 
   def edit
     @book = Book.find(params[:id])
+
+    if @book.user != current_user
+      redirect_to books_url
+    end
   end
 
   def create
@@ -42,6 +50,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.require(:book).permit(:title, :body)
   end
 end
