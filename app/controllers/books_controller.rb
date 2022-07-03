@@ -7,6 +7,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    # WARNING: book投稿詳細画面ではcurrent_userではなくbookの投稿者情報で上書き
+    @user = @book.user
   end
 
   def edit
